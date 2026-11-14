@@ -17,6 +17,10 @@ public class PcscProbe {
         System.out.println("java " + System.getProperty("java.version") + " / " + System.getProperty("os.arch"));
         TerminalFactory f = TerminalFactory.getDefault();
         System.out.println("TerminalFactory: " + f.getType() + " provider=" + f.getProvider().getName());
+        if ("None".equals(f.getType())) {
+            System.out.println("PC/SC binding FAILED: no PC/SC provider (check -Dsun.security.smartcardio.library)");
+            System.exit(1);
+        }
         CardTerminals terms = f.terminals();
         int wait = args.length > 0 ? Integer.parseInt(args[0]) : 0;
         long end = System.currentTimeMillis() + wait * 1000L;
