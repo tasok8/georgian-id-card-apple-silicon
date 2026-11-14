@@ -22,6 +22,20 @@ Rosetta-ს გარეშე მუშაობს.
 
 <img src="docs/evidence/signing-test-2026-11-14-redacted.png" alt="ხელმოწერილი სატესტო გვერდი, ხელმომწერის მონაცემები დაფარულია" width="600">
 
+## ნატიური და Intel ვერსიები
+
+ორივე ვერსია დაინსტალირებულია ერთმანეთის გვერდით — ოფიციალური აპლიკაცია (მარცხნივ) უცვლელია:
+
+<img src="docs/evidence/app-icons.png" alt="Georgian ID Card და Georgian ID Card (Apple silicon) Applications საქაღალდეში" width="350">
+
+Activity Monitor, **ეს ვერსია** — Kind: **Apple** (მუშაობს ნატიურად):
+
+<img src="docs/evidence/activity-monitor-apple-silicon.png" alt="Activity Monitor: Georgian ID Card, Kind Apple" width="700">
+
+Activity Monitor, **ოფიციალური აპლიკაცია** — Kind: **Intel** (საჭიროებს Rosetta-ს):
+
+<img src="docs/evidence/activity-monitor-intel.png" alt="Activity Monitor: Georgian ID Card, Kind Intel" width="700">
+
 ## პრობლემა
 
 ოფიციალური macOS აპლიკაცია მხოლოდ Intel-ისთვისაა. Apple silicon-ზე ის Rosetta 2-ით მუშაობს, macOS კი

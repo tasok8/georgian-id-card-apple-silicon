@@ -29,3 +29,11 @@ clone of this repository with `src/build.sh`.
 The signed PDF itself is **not** published: it contains the card holder's certificate (full name
 and personal number). The image above is a rendering of the signed page with the name and personal
 number blacked out. Only the date and time of the visual stamp are left visible.
+
+## Native execution
+
+| Screenshot | Shows |
+|---|---|
+| [app-icons.png](app-icons.png) | Official app and this build installed side by side |
+| [activity-monitor-apple-silicon.png](activity-monitor-apple-silicon.png) | This build: Kind = Apple (native arm64) |
+| [activity-monitor-intel.png](activity-monitor-intel.png) | Official app: Kind = Intel (Rosetta) |

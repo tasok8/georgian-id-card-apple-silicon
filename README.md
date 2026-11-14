@@ -22,6 +22,20 @@ timestamp and long-term validation data. Name and personal number are blacked ou
 
 <img src="docs/evidence/signing-test-2026-11-14-redacted.png" alt="Signed test page with the signer's identity blacked out" width="600">
 
+## Native vs Intel
+
+Both versions installed side by side – the official app (left) is untouched:
+
+<img src="docs/evidence/app-icons.png" alt="Georgian ID Card and Georgian ID Card (Apple silicon) in Applications" width="350">
+
+Activity Monitor, **this build** – Kind: **Apple** (runs natively):
+
+<img src="docs/evidence/activity-monitor-apple-silicon.png" alt="Activity Monitor showing Georgian ID Card with Kind Apple" width="700">
+
+Activity Monitor, **official app** – Kind: **Intel** (needs Rosetta):
+
+<img src="docs/evidence/activity-monitor-intel.png" alt="Activity Monitor showing Georgian ID Card with Kind Intel" width="700">
+
 ## The problem
 
 The official macOS app is Intel-only. On Apple silicon it runs through Rosetta 2, and macOS warns
