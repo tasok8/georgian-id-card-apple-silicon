@@ -100,7 +100,7 @@ Tested on one Apple silicon Mac with macOS 27.2.1. Full tables are in
   directed the investigation, built and tested the app on her Mac with the card holder, reviewed
   the changes and published this repository.
 - **AI assistance:** the investigation, launcher, scripts and documentation were produced with
-  the help of Claude (Anthropic), then reviewed before publication.
+  the help of an AI assistant, then reviewed before publication.
 
 ## License
 
