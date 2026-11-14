@@ -57,15 +57,15 @@ These were run during the AI-assisted build session on one Apple silicon Mac. Re
 
 | Test | Result |
 |---|---|
-| No x86_64 code left in bundle (all 67 Mach-O files arm64) | ✅ |
-| Launch from Finder/`open`, process Code Type | ✅ ARM64, not translated |
-| Splash → OSGi framework start → all 16 bundles → main window | ✅ no WARN/ERROR in log |
-| JavaFX rendering libs (`libglass`, `libprism_es2`) loaded | ✅ |
-| Built-in plugin update check against id.ge | ✅ all 16 plugin hashes match server |
-| Second launch while running | ✅ re-activates existing window, no duplicate |
-| Quit (Apple Event) | ✅ orderly bundle shutdown, process exits |
-| Cold restart with regenerated OSGi cache (`osgi.arch=aarch64`) | ✅ |
-| PC/SC native binding from bundled runtime (`PcscProbe`) | ✅ SunPCSC provider loads; 0 readers (none attached at that time) |
+| No x86_64 code left in bundle (all 67 Mach-O files arm64) | Pass |
+| Launch from Finder/`open`, process Code Type | Pass – ARM64, not translated |
+| Splash → OSGi framework start → all 16 bundles → main window | Pass – no WARN/ERROR in log |
+| JavaFX rendering libs (`libglass`, `libprism_es2`) loaded | Pass |
+| Built-in plugin update check against id.ge | Pass – all 16 plugin hashes match server |
+| Second launch while running | Pass – re-activates existing window, no duplicate |
+| Quit (Apple Event) | Pass – orderly bundle shutdown, process exits |
+| Cold restart with regenerated OSGi cache (`osgi.arch=aarch64`) | Pass |
+| PC/SC native binding from bundled runtime (`PcscProbe`) | Pass – SunPCSC provider loads; 0 readers (none attached at that time) |
 | Visual check of the window by automation | not done (no Screen Recording permission was granted) |
 
 ## 4. Tests with reader and card
@@ -79,12 +79,12 @@ test log.
 
 | Function | Result |
 |---|---|
-| Reader detection | ✅ reported working |
-| Card detection / card info screen | ✅ reported working |
-| Certificate viewing | ✅ reported working |
-| PIN verification (PIN entered only in the app's dialog) | ✅ reported working |
-| Signing: PDF (PAdES), CMS file signing, visual signature, validation, extend signature (TSA) | ✅ reported working |
-| Web signer window (JavaFX WebView) | ✅ reported working |
+| Reader detection | Reported working |
+| Card detection / card info screen | Reported working |
+| Certificate viewing | Reported working |
+| PIN verification (PIN entered only in the app's dialog) | Reported working |
+| Signing: PDF (PAdES), CMS file signing, visual signature, validation, extend signature (TSA) | Reported working |
+| Web signer window (JavaFX WebView) | Reported working |
 | Certificate update (online) | unknown – only applicable if used |
 | eSeal card, PIN-pad readers | unknown – only applicable if used |
 | PIN change / PUK unblock | not tested (deliberately – wrong attempts can block a card) |
@@ -96,9 +96,9 @@ Factory-default `config.properties`, no logs, no OSGi cache.
 
 | Test | Result |
 |---|---|
-| `hdiutil verify` DMG, `unzip -t` zip | ✅ |
-| App copied out of the mounted DMG: `codesign --verify --strict` | ✅ |
-| Launch of that copy: ARM64, main window, 0 WARN/ERROR, update check OK, Quit | ✅ |
-| `spctl -a` (Gatekeeper) | ❌ "rejected" – expected for an ad-hoc, non-notarized build. The original app also fails `spctl` ("sealed resource is missing or invalid"). |
+| `hdiutil verify` DMG, `unzip -t` zip | Pass |
+| App copied out of the mounted DMG: `codesign --verify --strict` | Pass |
+| Launch of that copy: ARM64, main window, 0 WARN/ERROR, update check OK, Quit | Pass |
+| `spctl -a` (Gatekeeper) | Fail – "rejected" – expected for an ad-hoc, non-notarized build. The original app also fails `spctl` ("sealed resource is missing or invalid"). |
 | Install on a second Mac / clean user account with quarantine | not tested |
 | macOS 28 | not tested |

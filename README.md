@@ -75,10 +75,10 @@ Installation and first launch: [docs/INSTALL.md](docs/INSTALL.md).
 Tested on one Apple silicon Mac with macOS 27.2.1. Full tables are in
 [docs/CHANGES.md](docs/CHANGES.md).
 
-- ✅ All Mach-O files arm64; runs natively (not translated); all 16 OSGi bundles start; main window opens
-- ✅ Quit, relaunch, second-launch re-activation; built-in update check against id.ge
-- ✅ Reported working by the card holder: reader and card detection, card info, certificates, PIN verification, signing, web signer
-- ❔ Not tested: certificate update, eSeal card, PIN-pad readers, PIN change/PUK unblock, a second Mac, a clean user account, **macOS 28**
+- **Passed:** All Mach-O files arm64; runs natively (not translated); all 16 OSGi bundles start; main window opens
+- **Passed:** Quit, relaunch, second-launch re-activation; built-in update check against id.ge
+- **Reported working by the card holder:** reader and card detection, card info, certificates, PIN verification, signing, web signer
+- **Not tested:** certificate update, eSeal card, PIN-pad readers, PIN change/PUK unblock, a second Mac, a clean user account, **macOS 28**
 
 ## Limitations
 
