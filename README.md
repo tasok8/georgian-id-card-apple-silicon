@@ -13,6 +13,15 @@ the official application.
 > Not affiliated with or endorsed by the Public Service Development Agency (PSDA). For official
 > software and support, use https://id.ge.
 
+## Proof: it signs
+
+A test PDF signed with a Georgian ID card in this Apple silicon build (macOS 26.3.1, running
+natively). An independent validator confirms the signature is **valid** – PAdES with a trusted
+timestamp and long-term validation data. Name and personal number are blacked out.
+[Details](docs/evidence/README.md)
+
+<img src="docs/evidence/signing-test-2026-11-14-redacted.png" alt="Signed test page with the signer's identity blacked out" width="600">
+
 ## The problem
 
 The official macOS app is Intel-only. On Apple silicon it runs through Rosetta 2, and macOS warns
