@@ -116,6 +116,5 @@ installed next to the official app as `/Applications/Georgian ID Card (Apple sil
 | `verify.sh`: no changed or extra jars; all 67 Mach-O files arm64 | Pass (the first run also listed the original app's OSGi runtime cache as "missing" – a `verify.sh` bug, fixed) |
 | Runs natively (Activity Monitor Kind = Apple) | Pass |
 | Running next to the Intel app | Expected refusal: "can't run two copies" – quit one first |
-| Accepting the "Check for updates" dialog | Problem – the app stayed on "Please wait until program finishes" for 8+ minutes; after a force quit and relaunch it worked normally. Cause not determined. |
 | Card + PIN + PDF (PAdES) signing with visual stamp | Pass – see [evidence](evidence/README.md) |
 | Independent validation of the signed PDF (`pdfsig`) | Pass – signature valid, SHA-256, RFC 3161 timestamp, DSS/OCSP data (PAdES baseline LT) |
