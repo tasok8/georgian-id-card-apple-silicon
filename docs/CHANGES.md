@@ -102,3 +102,20 @@ Factory-default `config.properties`, no logs, no OSGi cache.
 | `spctl -a` (Gatekeeper) | Fail – "rejected" – expected for an ad-hoc, non-notarized build. The original app also fails `spctl` ("sealed resource is missing or invalid"). |
 | Install on a second Mac / clean user account with quarantine | not tested |
 | macOS 28 | not tested |
+
+## 6. Independent re-test on a second Mac (2026-11-14, macOS 26.3.1)
+
+Fresh `git clone` of this repository on a different Apple silicon Mac, built with `src/build.sh`,
+installed next to the official app as `/Applications/Georgian ID Card (Apple silicon).app`.
+
+| Test | Result |
+|---|---|
+| Build from a clean clone | Pass – no errors |
+| Azul Zulu download matches the SHA-256 pinned in `build.sh` | Pass |
+| `codesign --verify --strict` of the built app | Pass |
+| `verify.sh`: no changed or extra jars; all 67 Mach-O files arm64 | Pass (the first run also listed the original app's OSGi runtime cache as "missing" – a `verify.sh` bug, fixed) |
+| Runs natively (Activity Monitor Kind = Apple) | Pass |
+| Running next to the Intel app | Expected refusal: "can't run two copies" – quit one first |
+| Accepting the "Check for updates" dialog | Problem – the app stayed on "Please wait until program finishes" for 8+ minutes; after a force quit and relaunch it worked normally. Cause not determined. |
+| Card + PIN + PDF (PAdES) signing with visual stamp | Pass – see [evidence](evidence/README.md) |
+| Independent validation of the signed PDF (`pdfsig`) | Pass – signature valid, SHA-256, RFC 3161 timestamp, DSS/OCSP data (PAdES baseline LT) |

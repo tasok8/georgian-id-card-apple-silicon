@@ -74,12 +74,14 @@ Installation and first launch: [docs/INSTALL.md](docs/INSTALL.md).
 
 ## Test results (summary)
 
-Tested on one Apple silicon Mac with macOS 27.2.1. Full tables are in
-[docs/CHANGES.md](docs/CHANGES.md).
+Tested on two Apple silicon Macs (macOS 27.2.1 and 26.3.1). Full tables are in
+[docs/CHANGES.md](docs/CHANGES.md); signing evidence in [docs/evidence](docs/evidence/README.md).
 
 - **Passed:** All Mach-O files arm64; runs natively (not translated); all 16 OSGi bundles start; main window opens
 - **Passed:** Quit, relaunch, second-launch re-activation; built-in update check against id.ge
 - **Reported working by the card holder:** reader and card detection, card info, certificates, PIN verification, signing, web signer
+- **Passed (second Mac, 2026-11-14):** fresh build from this repo, native launch, PDF signing with an ID card – validated independently as PAdES baseline LT with trusted timestamp
+- **Known issue:** after accepting the in-app update dialog, the app once hung on "Please wait…"; force quit and relaunch fixed it
 - **Not tested:** certificate update, eSeal card, PIN-pad readers, PIN change/PUK unblock, a second Mac, a clean user account, **macOS 28**
 
 ## Limitations
