@@ -19,14 +19,14 @@ N="${2:-$ROOT/build/Georgian ID Card.app}"
 [[ -d "$O" && -d "$N" ]] || { echo "usage: $0 ORIGINAL.app REBUILT.app" >&2; exit 2; }
 fail=0
 
-echo "== 1. Java code: all jars must be byte-identical"
+echo "== 1. Java code: all jars must be byte-identical (OSGi runtime cache excluded)"
 while IFS= read -r -d '' j; do
   rel="${j#"$O"/}"
   if [[ ! -f "$N/$rel" ]]; then echo "  MISSING  $rel"; fail=1
   elif cmp -s "$j" "$N/$rel"; then printf '  same     %s  %s\n' "$(shasum -a 256 "$j" | cut -c1-16)" "$rel"
   else echo "  CHANGED  $rel"; fail=1; fi
-done < <(find "$O/Contents/Resources" -path "*/jre" -prune -o -name '*.jar' -print0 | sort -z)
-extra=$(cd "$N/Contents/Resources" && find . -path ./jre -prune -o -name '*.jar' -print | while read -r f; do [[ -f "$O/Contents/Resources/$f" ]] || echo "$f"; done)
+done < <(find "$O/Contents/Resources" \( -path "*/jre" -o -path "*/configuration/org.eclipse.osgi" \) -prune -o -name '*.jar' -print0 | sort -z)
+extra=$(cd "$N/Contents/Resources" && find . \( -path ./jre -o -path ./configuration/org.eclipse.osgi \) -prune -o -name '*.jar' -print | while read -r f; do [[ -f "$O/Contents/Resources/$f" ]] || echo "$f"; done)
 [[ -n "$extra" ]] && { echo "  EXTRA jars in rebuild: $extra"; fail=1; }
 
 echo; echo "== 2. All other differences (runtime folder summarised separately)"
