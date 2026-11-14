@@ -1,3 +1,5 @@
+**English** | [ქართული](README.ka.md)
+
 # Georgian ID Card for Apple silicon (unofficial)
 
 **Unofficial** build recipe that makes the official
