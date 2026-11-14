@@ -1,0 +1,30 @@
+# Build outputs: contain the official (proprietary) app JARs and a bundled Java runtime.
+# Never commit these.
+build/
+dist/
+work/
+*.app/
+*.dmg
+*.zip
+*.tar.gz
+*.jar
+*.sha256
+
+# Runtime state / logs (can contain certificate details)
+*.log
+config.properties
+configuration/
+
+# Signing material and credentials
+*.p12
+*.cer
+*.pem
+*.key
+*.mobileprovision
+.env
+
+# OS / editor noise
+.DS_Store
+.idea/
+.vscode/
+*.class
