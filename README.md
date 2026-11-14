@@ -104,7 +104,7 @@ Tested on two Apple silicon Macs (macOS 27.2.1 and 26.3.1). Full tables are in
 - **Passed:** Quit, relaunch, second-launch re-activation; built-in update check against id.ge
 - **Reported working by the card holder:** reader and card detection, card info, certificates, PIN verification, signing, web signer
 - **Passed (second Mac, 2026-11-14):** fresh build from this repo, native launch, PDF signing with an ID card – validated independently as PAdES baseline LT with trusted timestamp
-- **Not tested:** certificate update, eSeal card, PIN-pad readers, PIN change/PUK unblock, a second Mac, a clean user account, **macOS 28**
+- **Not tested:** certificate update, eSeal card, PIN-pad readers, PIN change/PUK unblock, a clean user account, **macOS 28**
 
 ## Limitations
 
